@@ -29,3 +29,20 @@ Content-Type: application/json
     "qty": 12,
     "price": 19.3
 }
+
+### GET ALL PRODUCTS
+
+GET http://localhost:3001/api/product
+
+
+### UPDATE PRODUCT
+PUT  http://localhost:3001/api/product/1
+Content-Type: application/json
+
+{
+    "title": "NEW PRODUCT"
+}
+
+
+### DELETE PRODUCT
+DELETE  http://localhost:3001/api/product/2

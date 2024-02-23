@@ -11,7 +11,12 @@ import { createInstructor, getInstructor } from "./handlers/insturctor";
 import { privateRoute, signin, signup } from "./handlers/user";
 import { createVideo, getVideos } from "./handlers/video";
 import { authenticate } from "./middlewares/auth";
-import { createProduct } from "./handlers/product";
+import {
+  createProduct,
+  deleteProduct,
+  getProducts,
+  updateProduct,
+} from "./handlers/product";
 
 const router = Router();
 
@@ -103,7 +108,18 @@ router.post(
   body("description").isString().optional(),
   createProduct,
 );
+router.get("/product", getProducts);
+router.put(
+  "/product/:id",
+  param("id").isInt(),
+  body("title").isString().optional(),
+  body("qty").isFloat().optional(),
+  body("price").isString().optional(),
+  body("description").isInt().optional(),
+  updateProduct,
+);
 
 router.get("/private", authenticate, privateRoute);
+router.delete("/product/:id", param("id").isInt(), deleteProduct);
 
 export default router;
