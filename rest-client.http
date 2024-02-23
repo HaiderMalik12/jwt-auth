@@ -1,0 +1,20 @@
+### GET 
+GET http://localhost:3001
+
+### SIGNUP USER
+POST http://localhost:3001/api/signup
+Content-Type: application/json
+
+{
+    "email": "jane@gmail.com",
+    "password": "password12"
+}
+
+### LOGIN USER
+POST http://localhost:3001/api/signin
+Content-Type: application/json
+
+{
+    "email": "jane@gmail.com",
+    "password": "password12"
+}
