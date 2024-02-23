@@ -15,6 +15,7 @@ model User {
   email      String      @unique
   password   String
   instructor Instructor?
+  products   Product[]
 }
 
 model Product {
@@ -23,6 +24,8 @@ model Product {
   qty         Int
   price       Float
   description String?
+  User        User?   @relation(fields: [userId], references: [id])
+  userId      Int?
 }
 
 model Instructor {

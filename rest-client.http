@@ -24,10 +24,10 @@ POST http://localhost:3001/api/product
 Content-Type: application/json
 
 {
-    "title": "Iphone X",
-    "description": "Optional Description",
-    "qty": 12,
-    "price": 19.3
+    "title": "Iphone 12 PRO MAX",
+    "description": "Latest Ipone Model",
+    "qty": 3,
+    "price": 12.3
 }
 
 ### GET ALL PRODUCTS

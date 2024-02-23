@@ -14,6 +14,7 @@ export const createProduct = async (req, res) => {
       description: req.body.description,
       qty: req.body.qty,
       price: req.body.price,
+      userId: req.user,
     },
   });
 

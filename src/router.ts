@@ -106,6 +106,7 @@ router.post(
   body("qty").isInt().notEmpty(),
   body("price").isFloat().notEmpty(),
   body("description").isString().optional(),
+  authenticate,
   createProduct,
 );
 router.get("/product", getProducts);
