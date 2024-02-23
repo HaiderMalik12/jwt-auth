@@ -44,7 +44,7 @@ router.post(
 router.get("/product", authenticate, getProducts);
 router.put(
   "/product/:id",
-  param("id").isInt(),
+  param("id").isString(),
   body("title").isString().optional(),
   body("qty").isFloat().optional(),
   body("price").isString().optional(),
@@ -52,7 +52,12 @@ router.put(
   authenticate,
   updateProduct,
 );
-router.delete("/product/:id", param("id").isInt(), authenticate, deleteProduct);
+router.delete(
+  "/product/:id",
+  param("id").isString(),
+  authenticate,
+  deleteProduct,
+);
 
 router.get("/private", authenticate, privateRoute);
 
