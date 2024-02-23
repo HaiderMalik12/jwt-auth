@@ -9,6 +9,14 @@ Content-Type: application/json
     "email": "jane@gmail.com",
     "password": "password12"
 }
+### SIGNUP USER PRODUCTION
+POST https://jwt-autentication.vercel.app/api/signup
+Content-Type: application/json
+
+{
+    "email": "jane@gmail.com",
+    "password": "password12"
+}
 
 ### LOGIN USER
 POST http://localhost:3001/api/signin
