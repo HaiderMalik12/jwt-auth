@@ -1,9 +1,14 @@
 {
-    "compilerOptions": {
-        "sourceMap": true,
-        "outDir": "dist",
-        "strict": false,
-        "lib": ["ESNext"],
-        "esModuleInterop": true
-    }
+  "compilerOptions": {
+    "outDir": "dist",
+    "sourceMap": true,
+    "target": "esnext",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": false,
+    "strict": false,
+    "skipLibCheck": true
+  },
+  "include": ["./api/*/ts", "./*.js", "src/**/*.ts", "test/**/*.ts"]
 }
