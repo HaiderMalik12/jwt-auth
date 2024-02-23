@@ -11,11 +11,10 @@ datasource db {
 }
 
 model User {
-  id         Int         @id @default(autoincrement())
-  email      String      @unique
-  password   String
-  instructor Instructor?
-  products   Product[]
+  id       Int       @id @default(autoincrement())
+  email    String    @unique
+  password String
+  products Product[]
 }
 
 model Product {
@@ -26,45 +25,4 @@ model Product {
   description String?
   User        User?   @relation(fields: [userId], references: [id])
   userId      Int?
-}
-
-model Instructor {
-  id      Int      @id @default(autoincrement())
-  name    String
-  zip     String
-  country String
-  city    String
-  courses Course[]
-  user    User?    @relation(fields: [userId], references: [id])
-  userId  Int?     @unique
-}
-
-model Course {
-  id           Int         @id @default(autoincrement())
-  title        String
-  desc         String
-  duration     Float
-  createdAt    DateTime    @default(now())
-  videos       Video[]
-  Instructor   Instructor? @relation(fields: [instructorId], references: [id])
-  instructorId Int?
-}
-
-model Video {
-  id           Int           @id @default(autoincrement())
-  title        String
-  desc         String
-  Course       Course?       @relation(fields: [courseId], references: [id])
-  courseId     Int?
-  videoDetails VideoDetails?
-}
-
-model VideoDetails {
-  id              Int     @id @default(autoincrement())
-  key             String?
-  metaData        String?
-  url             String
-  hostingProvider String
-  video           Video?  @relation(fields: [videoId], references: [id])
-  videoId         Int?    @unique
 }
