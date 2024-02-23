@@ -18,3 +18,14 @@ Content-Type: application/json
     "email": "jane@gmail.com",
     "password": "password12"
 }
+
+### Create Product
+POST http://localhost:3001/api/product
+Content-Type: application/json
+
+{
+    "title": "Iphone X",
+    "description": "Optional Description",
+    "qty": 12,
+    "price": 19.3
+}

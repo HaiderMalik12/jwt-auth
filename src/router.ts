@@ -97,11 +97,11 @@ router.post(
 
 router.post(
   "/product",
-  createProduct,
   body("title").isString().notEmpty(),
-  body("description").isString().optional(),
   body("qty").isInt().notEmpty(),
   body("price").isFloat().notEmpty(),
+  body("description").isString().optional(),
+  createProduct,
 );
 
 router.get("/private", authenticate, privateRoute);
