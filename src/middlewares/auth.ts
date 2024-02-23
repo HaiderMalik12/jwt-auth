@@ -6,11 +6,13 @@ interface JwtPayload {
 
 export const authenticate = (req, res, next) => {
   try {
-    const token = req.headers.token;
+    const authorization = req.headers.authorization;
 
-    if (!token) {
+    if (!authorization) {
       return res.status(401).json({ msg: "UnAuthorized: not authenticated!" });
     }
+
+    const token = authorization.split(" ")[1];
 
     const results = verify(token, process.env.WEB_TOKEN_SECRET) as JwtPayload;
 
