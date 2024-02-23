@@ -17,6 +17,14 @@ model User {
   instructor Instructor?
 }
 
+model Product {
+  id          Int     @id @default(autoincrement())
+  title       String
+  qty         Int
+  price       Float
+  description String?
+}
+
 model Instructor {
   id      Int      @id @default(autoincrement())
   name    String
