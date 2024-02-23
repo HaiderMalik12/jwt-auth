@@ -109,7 +109,7 @@ router.post(
   authenticate,
   createProduct,
 );
-router.get("/product", getProducts);
+router.get("/product", authenticate, getProducts);
 router.put(
   "/product/:id",
   param("id").isInt(),
@@ -117,10 +117,11 @@ router.put(
   body("qty").isFloat().optional(),
   body("price").isString().optional(),
   body("description").isInt().optional(),
+  authenticate,
   updateProduct,
 );
+router.delete("/product/:id", param("id").isInt(), authenticate, deleteProduct);
 
 router.get("/private", authenticate, privateRoute);
-router.delete("/product/:id", param("id").isInt(), deleteProduct);
 
 export default router;
