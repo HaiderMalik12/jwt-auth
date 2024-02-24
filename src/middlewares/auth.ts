@@ -7,6 +7,7 @@ interface JwtPayload {
 export const authenticate = (req, res, next) => {
   try {
     const authorization = req.headers.authorization;
+    console.log(req.headers);
 
     if (!authorization) {
       return res.status(401).json({ msg: "UnAuthorized: not authenticated!" });

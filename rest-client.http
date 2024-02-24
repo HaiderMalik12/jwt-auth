@@ -6,15 +6,7 @@ POST http://localhost:3001/api/signup
 Content-Type: application/json
 
 {
-    "email": "jane@gmail.com",
-    "password": "password12"
-}
-### SIGNUP USER PRODUCTION
-POST https://jwt-autentication.vercel.app/api/signup
-Content-Type: application/json
-
-{
-    "email": "jane@gmail.com",
+    "email": "jane1@gmail.com",
     "password": "password12"
 }
 
@@ -23,17 +15,18 @@ POST http://localhost:3001/api/signin
 Content-Type: application/json
 
 {
-    "email": "jane@gmail.com",
+    "email": "jane1@gmail.com",
     "password": "password12"
 }
 
 ### Create Product
 POST http://localhost:3001/api/product
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDliMTNhNGNiMWQ0MWIwMTJmMTNjZiIsImlhdCI6MTcwODc2NTUwNSwiZXhwIjoxNzA4OTM4MzA1fQ.eQd9O0xZTPU878hhlr7PZ8TeqwExeS-rK4onZtDMr1o
 
 {
-    "title": "Iphone 12 PRO MAX",
-    "description": "Latest Ipone Model",
+    "title": "Iphone 13 PRO MAX",
+    "description": "Latest Phone Model",
     "qty": 3,
     "price": 12.3
 }

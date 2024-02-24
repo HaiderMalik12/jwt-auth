@@ -1,8 +1,8 @@
-# Project Setup
+## Project Setup
 
-## Step 1: Install Dependencies
+### Step 1: Install Dependencies
 
-```
+```bash
 npm install
 ```
 
@@ -26,15 +26,7 @@ Your MongoDB connection string format should be like that:
 DATABASE_URL="mongodb+srv://<username>:<password>@cluster0.4n0f8fw.mongodb.net/<databaseName>?retryWrites=true&w=majority&appName=Cluster0"
 ```
 
-### Step 3: Generate Prisma Client Bindings
-
-```bash
-npx prisma db pull --force
-```
-
-This command will sync your prisma models to your Database
-
-### Ste 4: Run the Project
+### Step 3: Run the Project
 
 ```bash
 npm run dev
