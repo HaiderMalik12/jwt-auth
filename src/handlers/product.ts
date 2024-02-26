@@ -26,6 +26,19 @@ export const getProducts = async (req, res) => {
   return res.status(200).json(products);
 };
 
+export const getProduct = async (req, res) => {
+  const errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
+
+  const product = await prisma.product.findUnique({
+    where: { id: req.params.id },
+  });
+  return res.status(200).json(product);
+};
+
 export const updateProduct = async (req, res) => {
   const errors = validationResult(req);
 

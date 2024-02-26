@@ -6,6 +6,7 @@ import { authenticate } from "./middlewares/auth";
 import {
   createProduct,
   deleteProduct,
+  getProduct,
   getProducts,
   updateProduct,
 } from "./handlers/product";
@@ -42,6 +43,7 @@ router.post(
   createProduct,
 );
 router.get("/product", authenticate, getProducts);
+router.get("/product/:id", param("id").isString(), authenticate, getProduct);
 router.put(
   "/product/:id",
   param("id").isString(),

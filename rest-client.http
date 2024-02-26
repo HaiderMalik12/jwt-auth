@@ -22,7 +22,7 @@ Content-Type: application/json
 ### Create Product
 POST http://localhost:3001/api/product
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDliMTNhNGNiMWQ0MWIwMTJmMTNjZiIsImlhdCI6MTcwODc2NTUwNSwiZXhwIjoxNzA4OTM4MzA1fQ.eQd9O0xZTPU878hhlr7PZ8TeqwExeS-rK4onZtDMr1o
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDliMTNhNGNiMWQ0MWIwMTJmMTNjZiIsImlhdCI6MTcwODk1ODQzNSwiZXhwIjoxNzA5MTMxMjM1fQ.Tx5r-oaQ5kUUsD9yl76B7Ab2aIIYhiVXqEM3XyCrHGA
 
 {
     "title": "Iphone 13 PRO MAX",
@@ -34,6 +34,8 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDliMTNhN
 ### GET ALL PRODUCTS
 
 GET http://localhost:3001/api/product
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDliMTNhNGNiMWQ0MWIwMTJmMTNjZiIsImlhdCI6MTcwODk1ODQzNSwiZXhwIjoxNzA5MTMxMjM1fQ.Tx5r-oaQ5kUUsD9yl76B7Ab2aIIYhiVXqEM3XyCrHGA
 
 
 ### UPDATE PRODUCT
@@ -47,3 +49,10 @@ Content-Type: application/json
 
 ### DELETE PRODUCT
 DELETE  http://localhost:3001/api/product/2
+
+
+### GET PRODUCT
+
+GET http://localhost:3001/api/product/65d8eb6192b7761cfaa6beb1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDliMTNhNGNiMWQ0MWIwMTJmMTNjZiIsImlhdCI6MTcwODk1ODQzNSwiZXhwIjoxNzA5MTMxMjM1fQ.Tx5r-oaQ5kUUsD9yl76B7Ab2aIIYhiVXqEM3XyCrHGA
