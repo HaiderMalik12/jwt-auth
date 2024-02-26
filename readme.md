@@ -26,6 +26,12 @@ Your MongoDB connection string format should be like that:
 DATABASE_URL="mongodb+srv://<username>:<password>@cluster0.4n0f8fw.mongodb.net/<databaseName>?retryWrites=true&w=majority&appName=Cluster0"
 ```
 
+### Step 4: Sync MongoDB Models with Database
+
+```bash
+npx prisma db push
+```
+
 ### Step 3: Run the Project
 
 ```bash

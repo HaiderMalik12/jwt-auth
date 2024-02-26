@@ -9,6 +9,14 @@ export const signup = async (req, res) => {
     return res.status(400).json({ errors: errors.array() });
   }
 
+  const existingUser = await prisma.user.findUnique({
+    where: { email: req.body.email },
+  });
+  if (existingUser) {
+    return res.status(400).json({
+      error: "You have already created an account with this email",
+    });
+  }
   const salt = bcrypt.genSaltSync(10);
   const hash = bcrypt.hashSync(req.body.password, salt);
 
