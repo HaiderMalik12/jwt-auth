@@ -10,7 +10,11 @@ import router from "./router";
 
 const app = express();
 const server = createServer(app);
-const io = new Server(server);
+const io = new Server(server, {
+  cors: {
+    origin: process.env.FRONTEND_APP_URL || "http://localhost:4200",
+  },
+});
 /**
  * Socket IO SETUP
  */
@@ -32,5 +36,7 @@ app.get("/", (req, res) => {
 if (process.env.NODE_ENV === "development") {
   app.use(errorhandler());
 }
+
+io.listen(3000);
 
 export default app;
