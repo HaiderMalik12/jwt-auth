@@ -48,9 +48,9 @@ router.put(
   "/product/:id",
   param("id").isString(),
   body("title").isString().optional(),
-  body("qty").isFloat().optional(),
-  body("price").isString().optional(),
-  body("description").isInt().optional(),
+  body("qty").isInt().optional(),
+  body("price").isNumeric().optional(),
+  body("description").isString().optional(),
   authenticate,
   updateProduct,
 );

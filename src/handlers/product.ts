@@ -54,12 +54,17 @@ export const updateProduct = async (req, res) => {
     return res.status(404).json({ err: "could not find product" });
   }
 
+  console.log(product);
+  console.log(req.body);
+
   const updatedProduct = await prisma.product.update({
     where: {
       id: req.params.id,
     },
     data: req.body,
   });
+
+  console.log(updateProduct);
 
   return res.status(200).json(updatedProduct);
 };
