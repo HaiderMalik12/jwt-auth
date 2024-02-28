@@ -19,14 +19,7 @@ const io = new Server(server, {
  * Socket IO SETUP
  */
 io.on("connection", (socket) => {
-  console.log("a user connected here");
-
   socket.on("product:add", (data) => {
-    // broadcast the allProducts event to all users/clients
-    console.log("product:add event called");
-    console.log(data);
-
-    // send product to all connected clients
     io.emit("product:created", data);
   });
 });
